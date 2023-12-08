@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=tma-strapi
+      - POSTGRES_USER=tma-strapi
+      - POSTGRES_DB=tma-strapi
+
+volumes:
+  data:
+    driver: "local"
